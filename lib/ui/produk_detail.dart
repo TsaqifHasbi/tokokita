@@ -49,8 +49,19 @@ class _ProdukDetailState extends State<ProdukDetail> {
       mainAxisSize: MainAxisSize.min,
       children: [
         // Tombol Edit
-        OutlinedButton(
+        ElevatedButton(
           child: const Text("EDIT"),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.green,
+            foregroundColor: Colors.black,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(4),
+                bottomLeft: Radius.circular(4),
+              ),
+            ),
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+          ),
           onPressed: () {
             Navigator.push(
               context,
@@ -61,8 +72,19 @@ class _ProdukDetailState extends State<ProdukDetail> {
           },
         ),
         // Tombol Hapus
-        OutlinedButton(
+        ElevatedButton(
           child: const Text("DELETE"),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.red,
+            foregroundColor: Colors.black,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(4),
+                bottomRight: Radius.circular(4),
+              ),
+            ),
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+          ),
           onPressed: () => confirmHapus(),
         ),
       ],
