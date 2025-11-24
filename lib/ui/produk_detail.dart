@@ -9,6 +9,7 @@ import 'package:tokokita/widget/warning_dialog.dart';
 class ProdukDetail extends StatefulWidget {
   Produk? produk;
   ProdukDetail({Key? key, this.produk}) : super(key: key);
+
   @override
   _ProdukDetailState createState() => _ProdukDetailState();
 }
@@ -17,11 +18,7 @@ class _ProdukDetailState extends State<ProdukDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Detail Produk Tsaqif'),
-        backgroundColor: Colors.blue,
-        foregroundColor: Colors.white,
-      ),
+      appBar: AppBar(title: const Text('Detail Produk')),
       body: Center(
         child: Column(
           children: [
@@ -49,19 +46,8 @@ class _ProdukDetailState extends State<ProdukDetail> {
       mainAxisSize: MainAxisSize.min,
       children: [
         // Tombol Edit
-        ElevatedButton(
+        OutlinedButton(
           child: const Text("EDIT"),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.green,
-            foregroundColor: Colors.black,
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(4),
-                bottomLeft: Radius.circular(4),
-              ),
-            ),
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-          ),
           onPressed: () {
             Navigator.push(
               context,
@@ -72,19 +58,8 @@ class _ProdukDetailState extends State<ProdukDetail> {
           },
         ),
         // Tombol Hapus
-        ElevatedButton(
+        OutlinedButton(
           child: const Text("DELETE"),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.red,
-            foregroundColor: Colors.black,
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                topRight: Radius.circular(4),
-                bottomRight: Radius.circular(4),
-              ),
-            ),
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-          ),
           onPressed: () => confirmHapus(),
         ),
       ],
